@@ -13,9 +13,6 @@ public class skeleton : MonoBehaviour
     private float minChange = 3f;
     private float maxChange = 8f;
     private float distance;
-    private float timer = 2;
-    public Slider HPslider;
-    public GameObject GameOver;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -36,18 +33,6 @@ public class skeleton : MonoBehaviour
         {
             skeletonAnimator.SetTrigger("Attack");
             skeletonAnimator.SetBool("Walk", false);
-            timer -= Time.deltaTime;
-            if (timer <= 0f)
-            {
-                Health.health -= 10;
-                timer += 2f;
-                Debug.Log(Health.health);
-                HPslider.value = Health.health;
-            }
-            if (Health.health <= 0f)
-            {
-                GameOver.SetActive(true);
-            }
         }
         else
         {
