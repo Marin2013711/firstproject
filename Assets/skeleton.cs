@@ -29,7 +29,7 @@ public class skeleton : MonoBehaviour
             agent.SetDestination(player.position);
             skeletonAnimator.SetBool("Walk", true);
         }
-        else if (distance < 2f && distance >= 0f)
+        else if (distance <= agent.stoppingDistance && distance >= 0f)
         {
             skeletonAnimator.SetTrigger("Attack");
             skeletonAnimator.SetBool("Walk", false);

@@ -280,6 +280,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   target: {fileID: 2000437697}
+  HPslider: {fileID: 1033431873}
+  GameOver: {fileID: 1013531658}
+  Skeleton: {fileID: 1614395571}
 --- !u!135 &159063943
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1775,8 +1778,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skeletonAnimator: {fileID: 1614395570}
   player: {fileID: 2000437697}
-  HPslider: {fileID: 1033431873}
-  GameOver: {fileID: 1013531658}
 --- !u!195 &1614395569
 NavMeshAgent:
   m_ObjectHideFlags: 0

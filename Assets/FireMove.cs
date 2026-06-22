@@ -8,16 +8,17 @@ public class FireMove : MonoBehaviour
     public Slider HPslider;
     public GameObject GameOver;
     public Transform Skeleton;
+    private Vector3 FixedTarget;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        FixedTarget = target.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, FixedTarget, speed * Time.deltaTime);
     }
     void OnCollisionEnter(Collision collision)
     { 
