@@ -13,6 +13,8 @@ public class skeleton : MonoBehaviour
     private float minChange = 3f;
     private float maxChange = 8f;
     private float distance;
+    public GameObject FireBall;
+    private float TimerShot = 0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,16 +25,24 @@ public class skeleton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        distance = Vector3.Distance(transform.position, player.position);
+        if (TimerShot > 0)
+        {
+            //Time.deltaTime = Время одного кадра
+            TimerShot -= Time.deltaTime;
+            Debug.Log(TimerShot);
+        }
+            distance = Vector3.Distance(transform.position, player.position);
         if (distance <= 5f && distance >= 2f)
         {
             agent.SetDestination(player.position);
             skeletonAnimator.SetBool("Walk", true);
         }
-        else if (distance <= agent.stoppingDistance && distance >= 0f)
+        else if (distance <= agent.stoppingDistance + 10 && distance >= 0f && TimerShot <= 0f)
         {
+            FireBall.SetActive(true);
             skeletonAnimator.SetTrigger("Attack");
             skeletonAnimator.SetBool("Walk", false);
+            TimerShot = 2f;
         }
         else
         {
