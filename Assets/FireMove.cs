@@ -21,6 +21,10 @@ public class FireMove : MonoBehaviour
     void Update()
     {
         transform.position = Vector3.MoveTowards(transform.position, FixedTarget, speed * Time.deltaTime);
+        if (transform.position == FixedTarget)
+        {
+            FixedTarget = target.position;
+        }
     }
     void OnTriggerEnter(Collider other)
     {
@@ -30,12 +34,11 @@ public class FireMove : MonoBehaviour
             Health.health -= 10;
             Debug.Log(Health.health);
             HPslider.value = Health.health;
-            gameObject.SetActive(false);
+            Destroy(gameObject);
             if (Health.health <= 0f)
             {
                 GameOver.SetActive(true);
             }
-            transform.position = FireStart;
         }
     }
 }

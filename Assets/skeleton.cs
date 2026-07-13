@@ -39,7 +39,8 @@ public class skeleton : MonoBehaviour
         }
         else if (distance <= agent.stoppingDistance + 10 && distance >= 0f && TimerShot <= 0f)
         {
-            FireBall.SetActive(true);
+            Instantiate(FireBall, transform.position, transform.rotation);
+            Debug.Log("FireStrart");
             skeletonAnimator.SetTrigger("Attack");
             skeletonAnimator.SetBool("Walk", false);
             TimerShot = 2f;
