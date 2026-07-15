@@ -1799,7 +1799,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skeletonAnimator: {fileID: 1614395570}
   player: {fileID: 2000437697}
-  FireBall: {fileID: 2116490332}
+  FireBall: {fileID: 4000667520668516784, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
 --- !u!195 &1614395569
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1810,7 +1810,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 4
+  m_Speed: 0
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
