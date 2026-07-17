@@ -626,6 +626,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fire001
       objectReference: {fileID: 0}
+    - target: {fileID: 4000667520668516784, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6650292440862550807, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.08
@@ -666,16 +670,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9039360518870468794, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 2000437697}
+    - target: {fileID: 9039360518870468794, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
+      propertyPath: GameOver
+      value: 
+      objectReference: {fileID: 1013531658}
+    - target: {fileID: 9039360518870468794, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
+      propertyPath: HPslider
+      value: 
+      objectReference: {fileID: 1033431873}
+    - target: {fileID: 9039360518870468794, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
+      propertyPath: Skeleton
+      value: 
+      objectReference: {fileID: 1614395571}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4000667520668516784, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2116490336}
-    - targetCorrespondingSourceObject: {fileID: 4000667520668516784, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2116490337}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
 --- !u!1 &507395293
 GameObject:
@@ -1799,7 +1813,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skeletonAnimator: {fileID: 1614395570}
   player: {fileID: 2000437697}
-  FireBall: {fileID: 4000667520668516784, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
+  FireBall: {fileID: 2116490332}
 --- !u!195 &1614395569
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1814,7 +1828,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 4
+  m_StoppingDistance: 8
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -2607,44 +2621,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6650292440862550807, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
   m_PrefabInstance: {fileID: 362533741}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2116490336
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2116490332}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14f559a8b55e948439b86b288b322e9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  target: {fileID: 2000437697}
-  HPslider: {fileID: 1033431873}
-  GameOver: {fileID: 1013531658}
-  Skeleton: {fileID: 1614395571}
---- !u!135 &2116490337
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2116490332}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.23742676
-  m_Center: {x: -0.31, y: 0.04, z: -0.31}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

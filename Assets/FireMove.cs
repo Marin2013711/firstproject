@@ -29,7 +29,8 @@ public class FireMove : MonoBehaviour
             Health.health -= 10;
             Debug.Log(Health.health);
             HPslider.value = Health.health;
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            transform.position = Skeleton.position;
             if (Health.health <= 0f)
             {
                 GameOver.SetActive(true);
