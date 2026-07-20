@@ -9,6 +9,8 @@ public class FireMove : MonoBehaviour
     public GameObject GameOver;
     public Transform Skeleton;
     private Vector3 FixedTarget;
+    private float DestroyTimer = 2f;
+    public GameObject Fire;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,7 +20,18 @@ public class FireMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (DestroyTimer == 2)
+        {
+            FixedTarget = target.position;
+        }
         transform.position = Vector3.MoveTowards(transform.position, FixedTarget, speed * Time.deltaTime);
+        DestroyTimer -= Time.deltaTime;
+        if (DestroyTimer <= 0)
+        {
+            transform.position = Skeleton.position;
+            DestroyTimer = 2;
+            Fire.SetActive(false);
+        }
     }
     void OnTriggerEnter(Collider other)
     {
