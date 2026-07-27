@@ -10,12 +10,19 @@ public class AnimationShooting : MonoBehaviour
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
             monsterAnimator.SetBool("walking", true);
-        }else if (Input.GetKeyDown(KeyCode.E))
+        }
+        else if (Input.GetKeyDown(KeyCode.E))
         {
             monsterAnimator.SetTrigger("shooting");
         }
         else
         {
+            monsterAnimator.SetBool("walking", false);
+        }
+        if ((Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.E)) || (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.E)) ||
+            (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.E)) || (Input.GetKey(KeyCode.D)) && Input.GetKey(KeyCode.E))
+        {
+            monsterAnimator.SetTrigger("shooting");
             monsterAnimator.SetBool("walking", false);
         }
     }
