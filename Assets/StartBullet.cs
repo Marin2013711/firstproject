@@ -16,15 +16,15 @@ public class StartBullet : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            PistolTimer = 0.5f;
+            if (PistolTimer <= 0)
+            {
+                Instantiate(Bullet, Gun.position, Gun.rotation);
+                PistolTimer = 1f;
+            }
         }
         if (PistolTimer > 0)
         {
             PistolTimer -= Time.deltaTime; 
-        }
-        if (PistolTimer <= 0)
-        {
-            Instantiate(Bullet, Gun.position, Gun.rotation);
         }
     }
 }
