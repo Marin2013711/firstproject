@@ -15,6 +15,7 @@ public class skeleton : MonoBehaviour
     private float distance;
     public GameObject FireBall;
     private float TimerShot = 0f;
+    public int health = 3;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -29,7 +30,7 @@ public class skeleton : MonoBehaviour
         {
             //Time.deltaTime = Время одного кадра
             TimerShot -= Time.deltaTime;
-            Debug.Log(TimerShot);
+            //Debug.Log(TimerShot);
         }
             distance = Vector3.Distance(transform.position, player.position);
         if (distance <= 5f && distance >= 2f)
@@ -40,8 +41,7 @@ public class skeleton : MonoBehaviour
         else if (distance <= agent.stoppingDistance && TimerShot <= 0f)
         {
             Debug.Log("FireStrart");
-            //Instantiate(FireBall, transform.position, transform.rotation);
-            FireBall.SetActive(true);
+            //FireBall.SetActive(true);
             skeletonAnimator.SetTrigger("Attack");
             skeletonAnimator.SetBool("Walk", false);
             TimerShot = 2f;
@@ -61,5 +61,19 @@ public class skeleton : MonoBehaviour
     {
         randomDirection = Random.insideUnitSphere * 10f;
         changeDirectionTimer = Random.Range(minChange, maxChange);
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Bulleet"))
+        {
+            Debug.Log("Столкновение патрона");
+            health -= 1;
+            Debug.Log("HP Skeleton "+health);
+        }
+        if (health == 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
