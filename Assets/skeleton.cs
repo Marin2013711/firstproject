@@ -16,6 +16,7 @@ public class skeleton : MonoBehaviour
     public GameObject FireBall;
     private float TimerShot = 0f;
     public int health = 3;
+    public GameObject Explosion;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -73,7 +74,8 @@ public class skeleton : MonoBehaviour
         }
         if (health == 0)
         {
-            Destroy(gameObject);
+            Explosion.SetActive(true);
+            Destroy(gameObject,0.7f);
         }
     }
 }
