@@ -17,6 +17,7 @@ public class skeleton : MonoBehaviour
     private float TimerShot = 0f;
     public int health = 3;
     public GameObject Explosion;
+    public Slider SliderSkeleton;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -70,6 +71,7 @@ public class skeleton : MonoBehaviour
         {
             Debug.Log("Столкновение патрона");
             health -= 1;
+            SliderSkeleton.value = health;
             Debug.Log("HP Skeleton "+health);
         }
         if (health == 0)
