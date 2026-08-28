@@ -7,7 +7,7 @@ public class StartBullet : MonoBehaviour
     public Transform Gun;
     public float PistolTimer = 0f;
     public int MaxBullet = 15;
-    private int Bullets = 15;
+    public int Bullets = 15;
     public TextMeshProUGUI BulletText;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
