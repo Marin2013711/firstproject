@@ -34,11 +34,11 @@ public class StartBullet : MonoBehaviour
                 Instantiate(Bullet, Gun.position, Gun.rotation);
                 PistolTimer = 1f;
                 Bullets -= 1;
-                BulletText.text = Bullets.ToString();
             }
         }
         if (PistolTimer > 0)
         {
+            BulletText.text = Bullets.ToString();
             PistolTimer -= Time.deltaTime; 
         }
     }

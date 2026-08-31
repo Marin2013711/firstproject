@@ -21,8 +21,9 @@ public class boxscript : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            startbullet.Bullets += 15;
+            startbullet.Bullets = 15;
             startbullet.PistolTimer = 1f;
+            Destroy(gameObject);
         }
     }
 }
